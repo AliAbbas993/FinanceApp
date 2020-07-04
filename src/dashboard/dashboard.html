@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.css">
+    <link rel="stylesheet" href="../../assets/styles/css/style.css">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <section class="dashboard-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">          
+            <h1 class="text-center">Budget Dashboard</h1>
+            <div class="d-flex flex-wrap justify-content-center align-items-center">
+              <div class="col-md-5 my-3">
+                <h6 class="text-center">Monthly Earning Graph</h6>
+                <canvas id="myEarn" width="300" height="300"></canvas>
+              </div>
+              <div class="col-md-5 my-3">
+                <h6 class="text-center">Monthly Expense Graph</h6>
+                <canvas id="myExpense" width="300" height="300"></canvas>
+              </div>
+            </div>
+            <div class="col-md-12 my-3">
+              <h4 class="text-center">Earning/Expense Comparison</h4>
+              <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/Chart.min.js"></script>
+    <script src="../../assets/js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/styles/css/style.css">
+    <title>Transactions</title>
+  </head>
+  <body>
+    <!-- Header Start -->
+      <header>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 py-2 d-inline-flex flex-wrap justify-content-between align-items-center">
+<!--               <div class="menu">
+                <span class="fa fa-toggle"></span>
+              </div> -->
+              <div class="logo">
+                <a href=":;"><img src="../../assets/images/logo.png" alt="logo"></a>
+              </div>
+              <div class="user-panel">
+                <ul class="list-unstyled m-0 d-flex justify-content-between align-items-center">
+                  <li id="welcome-user" class="mx-1">
+                    <p class="d-inline-block m-0">Welcome to <span id="user-name">AliAbbas</span></p>
+                  </li>
+                  <li id="user-img" class="mx-1">
+                    <span><img width="30px" src="../../assets/images/user-avatar.png" alt="avatar"></span>
+                  </li>
+                  <li id="logout" class="mx-1">
+                    <span><img width="15px" src="../../assets/images/login.png" alt=""></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <!-- Header Start -->  
+
+    <!-- Filter bar -->
+    <section class="filter-sec my-3 py-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="d-flex flex-wrap justify-content-start align-items-center mb-3">
+              <div class="filter px-3 form-group">
+                <label class="filter-title">Month Filter</label>
+                <select name="month" id="month_filter" class="form-control">
+                </select>
+              </div>
+              <div class="filter px-3 form-group">
+                <label class="filter-title">Year Filter</label>
+                <select name="year" id="year_filter" class="form-control">
+                </select>
+              </div>
+              <div class="filter px-3 form-group">
+                <label class="filter-title">Type Filter</label>
+                <select name="type" id="type_filter" class="form-control">
+                  <option value="all">All</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expense</option>
+                </select>
+              </div>              
+              <div class="filter-btn my-3 pt-3">
+                <input type="submit" onclick="applyFilter();" class="btn btn-primary" value="Apply Filter">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Filter bar -->
+    
+    <section class="transactions-sec">
+      <div class="transaction-header p-3 d-flex flex-wrap justify-content-between align-items-center">
+        <div class="col-md-4">
+          <h3>Transactions</h3>
+        </div>
+        <div class="col-md-4 d-flex flex-wrap justify-content-end align-items-center">
+          <button id="add_income" onclick="toggleIncome();" class="add-btn mx-1"><span>+</span> Income</button>
+          <button id="add_expense" onclick="toggleExpense();" class="add-btn mx-1"><span>+</span> Expense</button>          
+        </div>
+      </div>
+      <div id="income-expense-forms" class="income-expense-forms">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="income_form" class="form-box my-3">
+                <span id="close-income" class="close-form" onclick="closeForm(event);"> x </span>
+                <h3 class="text-center">Add Income</h3>
+                <form id="income" action="">
+                  <div class="d-flex flex-wrap justify-content-between">                  
+                    <div class="form-group col-md-4">
+                      <label for="income_amount">Amount</label>
+                      <input type="number" class="form-control" id="income_amount">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="income_date">Date</label>
+                      <input type="text" class="form-control" id="income_date">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="income_category">Category</label>
+                      <input type="text" class="form-control" id="income_category">
+                    </div>  
+                    <div class="form-group col-sm-12">
+                      <label for="income_decript">Description</label>
+                      <textarea type="text" class="form-control" id="income_decript" cols="30" rows="3"></textarea>
+                    </div>                                                      
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary"> + Add Income</button>
+                  </div>
+                </form>
+              </div>
+              <div id="expense_form" class="form-box my-3">
+                <span id="close-expense" class="close-form" onclick="closeForm(event);"> x </span>
+                <h3 class="text-center">Add Expense</h3>
+                <form id="expense" action="">
+                  <div class="d-flex flex-wrap justify-content-between">                  
+                    <div class="form-group col-md-4">
+                      <label for="expense_amount">Amount</label>
+                      <input type="number" class="form-control" id="expense_amount">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="expense_date">Date</label>
+                      <input type="text" class="form-control" id="expense_date">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="expense_category">Category</label>
+                      <input type="text" class="form-control" id="expense_category">
+                    </div>  
+                    <div class="form-group col-sm-12">
+                      <label for="expense_decript">Description</label>
+                      <textarea type="text" class="form-control" id="expense_decript" cols="30" rows="3"></textarea>
+                    </div>                                                      
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary"> + Add Expense</button>
+                  </div>
+                </form>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/transaction.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+  </body>
+</html>

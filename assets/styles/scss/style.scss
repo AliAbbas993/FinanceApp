@@ -1,0 +1,157 @@
+input:focus, select:focus{
+	box-shadow: none!important;
+}
+
+
+/*Header style start*/ 
+header{
+	box-shadow: 0 15px 15px #ececec;
+	.logo{
+		img{
+			width: 120px;		
+		}
+	}
+	.user-panel{
+		#welcome-user{
+			p{
+				font-size: 15px;
+				font-weight: 300;
+				text-transform: capitalize;
+				span{
+				    color: #d06738;
+				    text-transform: uppercase;
+				    font-weight: 600;
+				    font-size: 15px;
+				}
+			}
+		}
+	}
+}
+/*Header style end*/
+
+
+/* Filter style */
+.filter-sec{
+	.filter{
+		label{
+			color: #d06738;
+			text-transform: capitalize;
+		}
+		select{
+			min-width: 120px;
+			color: #d06738;
+			border-radius: 0px;
+			border: none;
+			border-bottom: 1px solid #d06738;
+		}
+	} 
+	.filter-btn{
+		input[type="submit"]{
+			background: #ffffff;
+		    box-shadow: 0 0 5px #d06738;
+		    border: none;
+		    border-radius: 0px;
+		    padding: 5px 10px;
+		    color: #d06738;	
+		}
+	}
+}
+
+
+/* transaction listing*/
+.transactions-sec{
+	.transaction-header{
+		background: #d06738;
+		h3{
+			text-transform: uppercase;
+		    font-weight: 900;
+		    color: #ffffff;
+		}
+		.add-btn{
+			background: #ffffff;
+		    box-shadow: 0 0 10px #eeeeee;
+		    border: none;
+		    padding: 5px 10px;
+		    color: #d06738;
+		    span{
+		    	font-size: 14px;
+			    font-weight: 900;
+			    border-radius: 50%;
+			    background: #d06738;
+			    color: #fff;
+			    width: 20px;
+			    height: 20px;
+			    display: inline-flex;
+			    align-items: center;
+			    justify-content: center;
+			    margin-right: 5px;
+		    }
+		    &:focus{
+		    	outline: none;
+		    	border: none;
+		    }
+		}
+	}
+
+	.income-expense-forms{
+		padding: 15px;
+		display: none;
+		transition: 0.5 all;
+		.form-box{
+			padding: 15px;
+		    background: #ffffff;
+		    box-shadow: 0 0 10px #adadad;
+		    display: none;
+		    h3{
+			    color: #d06738;
+	    	    margin: 15px auto;
+		    }
+		    form{
+				label{
+					color: #d06738;
+					text-transform: capitalize;
+				}
+				input , select , textarea{
+					min-width: 120px;
+					color: #d06738;
+					border-radius: 0px;
+					border: none;
+					border-bottom: 1px solid #d06738;
+				}
+				button[type="submit"]{
+					background: #ffffff;
+				    box-shadow: 0 0 5px #d06738;
+				    border: none;
+				    border-radius: 0px;
+				    padding: 5px 10px;
+				    color: #d06738;	
+				}
+		    }
+		    &.show{
+    			display: block;
+				transition: 0.5 all;
+		    }
+		    .close-form{
+		    	position: absolute;
+			    right: 15px;
+			    font-size: 14px;
+			    font-weight: 900;
+			    border-radius: 50%;
+			    background: #d06738;
+			    color: #fff;
+			    width: 20px;
+			    height: 20px;
+			    display: inline-flex;
+			    align-items: center;
+			    justify-content: center;
+			    margin-right: 5px;
+			    cursor: pointer;
+			    z-index: 999999;
+		    }
+		}
+		&.show{
+			display: block;
+			transition: 0.5 all;
+		}
+	}
+}
